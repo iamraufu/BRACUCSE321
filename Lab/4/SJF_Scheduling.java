@@ -49,11 +49,11 @@ public class  SJF_Scheduling {
       }
     }
     
-    System.out.println("\nProcess Arrival \tBurst  \t\tComplete \tTurnaround \tWaiting");
+    System.out.println("\nProcess \tArrival \tBurst  \t\tComplete \tTurnaround \tWaiting");
     for( int i=0;i<n;i++) {
       avgWT=avgWT+waitingTime[i];
       avgTA=avgTA+turnAroundTime[i];
-      System.out.println(process[i]+"\t"+arrivalTime[i]+"\t\t"+burstTime[i]+"\t\t"+ completeTime[i]+"\t\t"+turnAroundTime[i]+"\t\t"+waitingTime[i]);
+      System.out.println(process[i]+"\t\t"+arrivalTime[i]+"\t\t"+burstTime[i]+"\t\t"+ completeTime[i]+"\t\t"+turnAroundTime[i]+"\t\t"+waitingTime[i]);
     }
     System.out.println("\nAverage Waiting time : " + (avgWT/n));
     System.out.println("Average Turnaround time : " + (avgTA/n));
