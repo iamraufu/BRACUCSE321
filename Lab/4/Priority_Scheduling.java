@@ -5,7 +5,7 @@ public class Priority_Scheduling {
 
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("Enter No of Process");
+            System.out.println("Enter No of Processes");
             int n = sc.nextInt();
 
             int process[] = new int[n];
@@ -18,15 +18,15 @@ public class Priority_Scheduling {
             int waitingTime[] = new int[n];
             int fg[] = new int[n];
             int st = 0, tot = 0;
-            float avgWT = 0, avgTA = 0;
+            float averageWaitingTime = 0, averageTurnaroundTime = 0;
 
             for (int i = 0; i < n; i++) {
-                  System.out.println("Enter p"+(i+1)+"arrival time");
+                  System.out.println("Enter P"+(i+1)+" arrival time");
                   arrivalTime[i] = sc.nextInt();
-                  System.out.println("Enter p" + (i + 1) + " burst time");
+                  System.out.println("Enter P" + (i + 1) + " burst time");
                   burstTime[i] = sc.nextInt();
                   burstTimeSolid[i] = burstTime[i];
-                  System.out.println("Enter p" + (i + 1) + " priority");
+                  System.out.println("Enter P" + (i + 1) + " priority");
                   priority[i] = sc.nextInt();
                   process[i] = i + 1;
                   fg[i] = 0;
@@ -66,13 +66,13 @@ public class Priority_Scheduling {
 
             }
             for (int i = 0; i < n; i++) {
-                  avgWT = avgWT + waitingTime[i];
-                  avgTA = avgTA + turnAroundTime[i];
+                  averageWaitingTime = averageWaitingTime + waitingTime[i];
+                  averageTurnaroundTime = averageTurnaroundTime + turnAroundTime[i];
                   System.out.println("\nProcess" + process[i] + "--> Arrival Time=" + arrivalTime[i] + " Burst Time="
                               + burstTimeSolid[i] + " priority=" + priority[i] + " Completion Time=" + completeTime[i]
                               + " Turnaround Time=" + turnAroundTime[i] + " Waiting Time=" + waitingTime[i]);
             }
-            System.out.println("\nAverage Waiting time : " + (avgWT / n));
-            System.out.println("Average Turnaround time : " + (avgTA / n));
+            System.out.println("\nAverage Waiting time : " + (averageWaitingTime / n));
+            System.out.println("Average Turnaround time : " + (averageTurnaroundTime / n));
       }
 }
